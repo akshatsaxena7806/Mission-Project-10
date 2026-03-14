@@ -51,7 +51,7 @@ public class RoleDTO extends BaseDTO {
 	@Override
 	public String getUniqueValue() {
 		// TODO Auto-generated method stub
-		return "name";
+		return name;
 	}
 
 	@Override

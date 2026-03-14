@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ORSResponse {
 
-	public static final String INPUT_ERROR = "inputError";
+	public static final String INPUT_ERROR = "inputerror";
 	public static final String MESSAGE = "message";
 	public static final String DATA = "data";
 
@@ -56,5 +56,13 @@ public class ORSResponse {
 	public void addResult(String key, Object value) {
 		result.put(key, value);
 	}
+
+	@Override
+	public String toString() {
+		return "ORSResponse [success=" + success + ", result=" + result + "]";
+	}
+	
+	
+	
 
 }

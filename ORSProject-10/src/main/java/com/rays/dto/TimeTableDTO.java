@@ -1,4 +1,3 @@
-
 package com.rays.dto;
 
 import java.util.Date;
@@ -10,31 +9,31 @@ import javax.persistence.Table;
 import com.rays.common.BaseDTO;
 
 @Entity
-@Table(name = "st_timetable")
+@Table(name = "ST_TIMETABLE")
 public class TimeTableDTO extends BaseDTO {
 
-	@Column(name = "course_id", length = 50)
+	@Column(name = "COURSE_ID", length = 50)
 	private long courseId;
 
-	@Column(name = "course_name", length = 50)
+	@Column(name = "COURSE_NAME", length = 50)
 	private String courseName;
 
-	@Column(name = "subject_id", length = 50)
+	@Column(name = "SUBJECT_ID", length = 50)
 	private long subjectId;
 
-	@Column(name = "subject_name", length = 50)
+	@Column(name = "SUBJECT_NAME", length = 50)
 	private String subjectName;
 
-	@Column(name = "exam_date")
+	@Column(name = "EXAM_DATE")
 	private Date examDate;
 
-	@Column(name = "exam_time", length = 50)
+	@Column(name = "EXAM_TIME", length = 50)
 	private String examTime;
 
-	@Column(name = "semester", length = 30)
+	@Column(name = "SEMESTER", length = 30)
 	private String semester;
 
-	@Column(name = "description", length = 50)
+	@Column(name = "DESCRIPTION", length = 50)
 	private String description;
 
 	public long getCourseId() {
@@ -125,4 +124,13 @@ public class TimeTableDTO extends BaseDTO {
 	public String getValue() {
 		return null;
 	}
+
+	@Override
+	public String toString() {
+		return "TimetableDTO [courseId=" + courseId + ", courseName=" + courseName + ", subjectId=" + subjectId
+				+ ", subjectName=" + subjectName + ", examDate=" + examDate + ", examTime=" + examTime + ", semester="
+				+ semester + ", description=" + description + "]";
+	}
+	
+	
 }

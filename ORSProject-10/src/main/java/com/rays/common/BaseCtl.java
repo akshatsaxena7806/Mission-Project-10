@@ -83,7 +83,7 @@ public class BaseCtl<T extends BaseDTO, F extends BaseForm, S extends BaseServic
 		
 		try {
 			T dto = (T) form.getDTO();
-		
+			System.out.println("ors object created" + res);
 			if (dto.getId() != null) {
 				
               T existDto1 = service.findByUniqueKey(dto.getUniqueKey(), dto.getUniqueValue(), userContext);
@@ -100,25 +100,30 @@ public class BaseCtl<T extends BaseDTO, F extends BaseForm, S extends BaseServic
                 
 			}else {
 				if (dto.getUniqueKey()!= null && !dto.getUniqueKey().equals("")) {
-					
+					System.out.println("ors object created" + dto.getUniqueKey() + " " + dto.getUniqueValue());
 					T existDto = service.findByUniqueKey(dto.getUniqueKey(), dto.getUniqueValue(), userContext);
+					System.out.println("ors object created" + existDto);
 					if (existDto != null && dto.getId() != existDto.getId()) {
+						System.out.println("ors object c" + res);
 						res.setSuccess(false);
 						res.addMessage(dto.getLabel()  +  "alrady exist");
 						return res;
 					}
 					
 				}service.add(dto, userContext);
+				System.out.println("ors object created ======>" + res);
 				res.addMessage(dto.getLabel() + "data added successfully");
 				
 			}
 			
 		
 		}catch (Exception e){
+			System.out.println("ors objectE created" + res);
 			res.setSuccess(false);
 			res.addMessage(e.getMessage());
 			e.printStackTrace();
 		}
+		System.out.println("ors object FINAL" + res);
 		return res;
 	}
 	

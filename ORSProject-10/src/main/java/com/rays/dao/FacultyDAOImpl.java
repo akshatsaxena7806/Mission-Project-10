@@ -13,7 +13,7 @@ import com.rays.common.BaseDAOImpl;
 import com.rays.dto.FacultyDTO;
 
 @Repository
-public class FacultyDAOImpl extends BaseDAOImpl<FacultyDTO>{
+public class FacultyDAOImpl extends BaseDAOImpl<FacultyDTO> implements FacultyDAOInt{
 
 	@Override
 	protected List<Predicate> getWhereClause(FacultyDTO dto, CriteriaBuilder builder, Root<FacultyDTO> qRoot) {

@@ -9,6 +9,6 @@ import com.rays.dto.StudentDTO;
 
 @Service
 @Transactional
-public class StudentServiceImpl extends BaseServiceImpl<StudentDTO, StudentDAOInt> {
+public class StudentServiceImpl extends BaseServiceImpl<StudentDTO, StudentDAOInt> implements StudentServiceInt{
 
 }
