@@ -22,6 +22,9 @@ import { SubjectListComponent } from './subject/subject-list.component';
 import { TimetableListComponent } from './timetable/timetable-list.component';
 import { FacultyListComponent } from './faculty/faculty-list.component';
 import { ForgotpasswordComponent } from './login/forgotpassword.component';
+import { MarksheetmeritListComponent } from './marksheet/marksheetmerit-list.component';
+import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
+
 
 
 const routes: Routes = [
@@ -153,6 +156,16 @@ const routes: Routes = [
   {
     path: 'forgotpassword',
     component: ForgotpasswordComponent
+  },
+   {
+    path: 'marksheetmeritlist',
+    component: MarksheetmeritListComponent
+
+  },
+  {
+    path: 'getmarksheet',
+    component: GetmarksheetComponent
+
   },
   
 ];

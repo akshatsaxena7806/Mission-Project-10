@@ -14,8 +14,8 @@ import com.rays.common.FrontCtl;
 @SpringBootApplication
 public class ORSProject10Application {
 
-	@Autowired
-	private FrontCtl frontCtl;
+//	@Autowired
+//	private FrontCtl frontCtl;
 
 	public static void main(String[] args) {
 

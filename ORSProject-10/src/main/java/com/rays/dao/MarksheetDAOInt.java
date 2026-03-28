@@ -1,8 +1,13 @@
 package com.rays.dao;
 
+import java.util.List;
+
 import com.rays.common.BaseDAOInt;
+import com.rays.common.UserContext;
 import com.rays.dto.MarksheetDTO;
 
 public interface MarksheetDAOInt extends BaseDAOInt<MarksheetDTO> {
+
+	List<MarksheetDTO> getMeritList(UserContext userContext);
 
 }

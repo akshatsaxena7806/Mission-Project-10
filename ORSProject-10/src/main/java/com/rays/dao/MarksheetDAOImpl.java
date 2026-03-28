@@ -3,6 +3,7 @@ package com.rays.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
@@ -57,6 +58,14 @@ public class MarksheetDAOImpl extends BaseDAOImpl<MarksheetDTO> implements Marks
 		if (studentDTO != null) {
 			dto.setName(studentDTO.getFirstName() + " " + studentDTO.getLastName());
 		}
+	}
+	@Override
+	public List<MarksheetDTO> getMeritList(UserContext userContext) {
+		TypedQuery<MarksheetDTO> typedQuery = entityManager.createQuery("from MarksheetDTO order by (physics+chemistry+maths) desc",getDtoClass());
+		typedQuery.setFirstResult(0);
+		typedQuery.setMaxResults(10);
+		List<MarksheetDTO> meritlist = typedQuery.getResultList();
+		return meritlist;
 	}
 
 }

@@ -7,13 +7,22 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.rays.common.BaseDAOImpl;
+import com.rays.common.UserContext;
+import com.rays.dto.CollegeDTO;
 import com.rays.dto.StudentDTO;
+import com.rays.service.CollegeServiceInt;
 @Repository
 public class StudentDAOImpl extends BaseDAOImpl<StudentDTO> implements StudentDAOInt {
 
+	
+	@Autowired
+	private CollegeServiceInt collegeService;
+	
+	
 	@Override
 	protected List<Predicate> getWhereClause(StudentDTO dto, CriteriaBuilder builder, Root<StudentDTO> qRoot) {
 
@@ -57,4 +66,15 @@ public class StudentDAOImpl extends BaseDAOImpl<StudentDTO> implements StudentDA
 		return StudentDTO.class;
 	}
 
+	@Override
+	public void populate(StudentDTO dto, UserContext userContext) {
+		CollegeDTO collegedto = collegeService.findById(dto.getCollegeId(), userContext);
+		if (collegedto!=null) {
+			dto.setCollegeName(collegedto.getName());
+		}
+		
+		
+		
+	}
+	
 }

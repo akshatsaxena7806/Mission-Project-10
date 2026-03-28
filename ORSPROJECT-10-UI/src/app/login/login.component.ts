@@ -38,9 +38,9 @@ export class LoginComponent {
 
       if (res.success) {
         localStorage.setItem("loginId", res.result.data.loginId);
-        localStorage.setItem("role", res.result.data.role);
-        localStorage.setItem("fname", res.result.data.fname);
-        localStorage.setItem("lname", res.result.data.lname);
+        localStorage.setItem("role", res.result.role);
+        localStorage.setItem("fname", res.result.fname);
+        localStorage.setItem("lname", res.result.lname);
         localStorage.setItem("userId", res.result.data.id);
         localStorage.setItem('token', 'Bearer ' + res.result.token)
         

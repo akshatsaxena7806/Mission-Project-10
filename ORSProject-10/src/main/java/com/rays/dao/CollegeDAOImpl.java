@@ -55,5 +55,14 @@ public class CollegeDAOImpl extends BaseDAOImpl<CollegeDTO> implements CollegeDA
 		// TODO Auto-generated method stub
 		return CollegeDTO.class;
 	}
-
+	
+	@Override
+	public void populate(CollegeDTO dto, UserContext userContext) {
+		
+		super.populate(dto, userContext);
+	}
+	
 }
+	
+
+
