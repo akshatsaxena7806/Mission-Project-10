@@ -36,6 +36,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
 import { MarksheetmeritListComponent } from './marksheet/marksheetmerit-list.component';
+import { MyprofileComponent } from './user/myprofile.component';
 
 
 
@@ -72,6 +73,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ForgotpasswordComponent,
     GetmarksheetComponent,
     MarksheetmeritListComponent,
+    MyprofileComponent,
 
   ],
   imports: [

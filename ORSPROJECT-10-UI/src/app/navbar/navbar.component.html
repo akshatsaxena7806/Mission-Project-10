@@ -1,9 +1,8 @@
 <style>
   .aj {
-    background-image: linear-gradient(to bottom right, #F5EFEB, #7695a3);
+      background-image: linear-gradient(to bottom right, #b4eeff, #0086b7);
   }
-
-  .img {
+    .img {
     width: 60px;
     height: 60px;
     /* border-radius: 50%; */
@@ -14,15 +13,14 @@
 <nav class="navbar navbar-expand-lg fixed-top aj">
 
   <a class="navbar-brand" [routerLink]="['/dashboard']">
-    <img *ngIf="!isLogin()" src="assets/img/customLogo.jpg" height="55">
-    <img *ngIf="isLogin()" src="http://localhost:8080/User/profilePic/{{form.data.id}}" alt="profile" class="img"
-      align="center">
+    <img *ngIf="!isLogin()" src="assets/img/customLogo.jpg" height="55px">
+    <img *ngIf="isLogin()" src="assets/img/customLogo.jpg" height="55px">
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon">
-      <i class="fa fa-bars" style="color:transparent"></i>
+      <i class="fa fa-bars" style="color: #fff; font-size: 28px;"></i>
     </span>
   </button>
 
@@ -58,8 +56,7 @@
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color: #2F4156;">{{ 'Links.college'
             | translate }}</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" [routerLink]="['/college']"><i class="fa fa-university"></i> {{ 'Links.AddCollege'
-              | translate }}</a>
+            <a class="dropdown-item" [routerLink]="['/college']"><i class="fa fa-university"></i> {{'Links.AddCollege'| translate }}</a>
             <a class="dropdown-item" [routerLink]="['/collegelist']"><i class="fa fa-building"></i> {{
               'Links.CollegeList' | translate }}</a>
           </div>
@@ -84,10 +81,11 @@
               translate }}</a>
             <a class="dropdown-item" [routerLink]="['/marksheetlist']"><i class="fa fa-paste"></i> {{
               'Links.MarksheetList' | translate }}</a>
-              <a class="dropdown-item" [routerLink]="['/marksheetmeritlist']"><i class="fa fa-paste"></i> {{
-              'marksheetmeritlist' | translate }}</a>
+
               <a class="dropdown-item" [routerLink]="['/getmarksheet']"><i class="fa fa-paste"></i> {{
-              'getmarksheet' | translate }}</a>
+              'Links.GetMarksheet' | translate }}</a>
+              <a class="dropdown-item" [routerLink]="['/marksheetmerit-list']"><i class="fa fa-paste"></i> {{
+              'Links.MarksheetMeritList' | translate }}</a>
           </div>
         </li>
 

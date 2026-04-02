@@ -24,6 +24,7 @@ import { FacultyListComponent } from './faculty/faculty-list.component';
 import { ForgotpasswordComponent } from './login/forgotpassword.component';
 import { MarksheetmeritListComponent } from './marksheet/marksheetmerit-list.component';
 import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
+import { MyprofileComponent } from './user/myprofile.component';
 
 
 
@@ -167,7 +168,15 @@ const routes: Routes = [
     component: GetmarksheetComponent
 
   },
-  
+  {
+    path:'myprofile',
+    component: MyprofileComponent
+  },
+  {
+   path:'myprofile/id',
+    component: MyprofileComponent
+  }
+
 ];
 
 @NgModule({

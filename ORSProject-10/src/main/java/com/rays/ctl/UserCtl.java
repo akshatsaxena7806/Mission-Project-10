@@ -5,15 +5,16 @@ package com.rays.ctl;
 import java.io.OutputStream;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +26,7 @@ import com.rays.common.ORSResponse;
 import com.rays.dto.AttachmentDTO;
 import com.rays.dto.RoleDTO;
 import com.rays.dto.UserDTO;
+import com.rays.form.MyProfileForm;
 import com.rays.form.UserForm;
 import com.rays.service.AttachmentServiceInt;
 import com.rays.service.RoleServiceInt;
@@ -41,6 +43,30 @@ public class UserCtl extends BaseCtl<UserDTO, UserForm, UserServiceInt> {
 	@Autowired
 	private AttachmentServiceInt attachmentService;
 	
+	
+	@PostMapping("myProfile")
+	public ORSResponse myProfile(@RequestBody @Valid MyProfileForm form, BindingResult bindingResult) {
+
+		ORSResponse res = validate(bindingResult);
+
+		if (!res.isSuccess()) {
+			return res;
+		}
+
+		UserDTO dto = service.findByLoginId(userContext.getLoginId(), userContext);
+		dto.setFirstName(form.getFirstName());
+		dto.setLastName(form.getLastName());
+		dto.setDob(form.getDob());
+		dto.setPhone(form.getPhone());
+		dto.setGender(form.getGender());
+
+		service.update(dto, userContext);
+
+		res.setSuccess(true);
+		res.addMessage("Your Profile updated successfully..!!");
+
+		return res;
+	}
 	
 	
 	

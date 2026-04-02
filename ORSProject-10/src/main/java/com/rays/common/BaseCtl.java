@@ -111,9 +111,11 @@ public class BaseCtl<T extends BaseDTO, F extends BaseForm, S extends BaseServic
 
 				}
 				service.add(dto, userContext);
+				
          		res.addMessage(dto.getLabel() + "data added successfully");
 
 			}
+			res.addData(dto);
 
 		} catch (Exception e) {
 			System.out.println("ors objectE created" + res);
