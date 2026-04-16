@@ -9,24 +9,34 @@ import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.GenericGenerator;
 
+/**
+ * Base DTO class providing common fields and audit trail functionality.
+ * 
+ * @author Akshat Saxena
+ */
 @MappedSuperclass
 public abstract class BaseDTO implements DropdownList {
 
+	/** Primary key ID */
 	@Id
 	@GeneratedValue(generator = "pk")
 	@GenericGenerator(name = "pk", strategy = "native")
 	@Column(name = "ID", nullable = false, unique = true)
 	protected Long id;
 
+	/** User who created the record */
 	@Column(name = "CREATED_BY", length = 50)
 	protected String createdBy;
 
+	/** User who last modified the record */
 	@Column(name = "MODIFIED_BY", length = 50)
 	protected String modifiedBy;
 
+	/** Record creation timestamp */
 	@Column(name = "CREATED_DATETIME")
 	protected Timestamp createdDateTime;
 
+	/** Last modification timestamp */
 	@Column(name = "MODIFIED_DATETIME")
 	protected Timestamp modifiedDateTime;
 	

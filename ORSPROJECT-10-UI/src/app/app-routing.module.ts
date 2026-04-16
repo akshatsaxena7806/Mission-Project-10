@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './login/signup.component';
@@ -25,6 +25,7 @@ import { ForgotpasswordComponent } from './login/forgotpassword.component';
 import { MarksheetmeritListComponent } from './marksheet/marksheetmerit-list.component';
 import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
 import { MyprofileComponent } from './user/myprofile.component';
+import { ChangepasswordComponent } from './change-password/change-password.component';
 
 
 
@@ -159,7 +160,7 @@ const routes: Routes = [
     component: ForgotpasswordComponent
   },
    {
-    path: 'marksheetmeritlist',
+    path: 'marksheetmerit-list',
     component: MarksheetmeritListComponent
 
   },
@@ -173,9 +174,13 @@ const routes: Routes = [
     component: MyprofileComponent
   },
   {
-   path:'myprofile/id',
+   path:'myprofile/:id',
     component: MyprofileComponent
-  }
+  },
+  {
+  path:'changepassword',
+  component:ChangepasswordComponent
+  },
 
 ];
 

@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { HttpServiceService } from '../http-service.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-signup',
-  templateUrl: './signup.component.html'
+  templateUrl: './signup.component.html',
+  styles: [
+  ]
 })
 export class SignupComponent {
 
-  endpoint = "http://localhost:8081/Auth/signUp";
+    endpoint = "http://localhost:8081/Auth/signUp";
 
   form: any = {
     error: false,
@@ -41,4 +44,5 @@ export class SignupComponent {
   reset() {
     location.reload();
   }
+
 }
