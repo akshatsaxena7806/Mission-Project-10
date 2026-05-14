@@ -14,6 +14,7 @@ export class HttpServiceService {
     return this.httpClient.post(endpoint, bean, ).subscribe((data)=>{
       callback(data)
     },(error)=>{
+      this.handleError(error, callback);
 
     });
    }
@@ -23,11 +24,14 @@ export class HttpServiceService {
     return this.httpClient.get(endpoint , ). subscribe((data)=>{
       callback(data)
     },(error)=>{
+      this.handleError(error, callback);
       
     });
     }
 private handleError(error: any, callback: any) {
     if (error.status === 503) {
+      console.log(error.error);    
+      console.log(error)
       callback({
         success: false,
         result: {
