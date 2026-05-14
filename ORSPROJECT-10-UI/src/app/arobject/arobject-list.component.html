@@ -16,7 +16,7 @@
 
     <!-- Title -->
     <div align="center">
-      <h1 style="color: rgb(255, 255, 255);"><u>User List</u></h1>
+      <h1 style="color: white;"><u>AR Object List</u></h1>
     </div>
 
     <!-- Success Message -->
@@ -47,44 +47,25 @@
       <div class="row mb-3">
         <div class="col-sm-2"></div>
 
-        <div class="col-sm-2">
+        <div class="col-sm-3">
           <input type="text"
-                 name="firstName"
-                 [(ngModel)]="form.searchParams.firstName"
-                 placeholder="Enter First Name"
+                 name="userId"
+                 [(ngModel)]="form.searchParams.userId"
+                 placeholder="Enter User ID"
                  class="form-control">
         </div>
 
-        <div class="col-sm-2">
-          <input type="text"
-                 name="loginId"
-                 [(ngModel)]="form.searchParams.loginId"
-                 placeholder="Enter Email ID"
-                 class="form-control">
-        </div>
+       <div class="mx-2 d-flex align-items-center">
+                        <label class="mb-0 me-1 fw-bold">ARObject:</label>
+                        &nbsp;
+                        <select class="form-select form-select-sm" name="subscriptionType" [(ngModel)]="form.searchParams.subscriptionType"
+                            style="width: 180px;">
+                            <option value="undefined">--------Select--------</option>
+                            <option *ngFor="let obj of form.preload.arObject" [value]="obj.value">{{obj.value}}</option>
+                        </select>
+                    </div>
 
         <div class="col-sm-3">
-          <select name="roleId"
-                  [(ngModel)]="form.searchParams.roleId"
-                  class="form-control">
-            <option value="undefined">------------Select------------</option>
-            <option *ngFor="let obj of form.preload.roleList" [value]="obj.key">
-              {{ obj.value }}
-            </option>
-          </select>
-        </div>
-      <!--<div class="col-sm-3">
-          <select name="id"
-                  [(ngModel)]="form.searchParams.id"
-                  class="form-control">
-            <option value="undefined">------------Select------------</option>
-            <option *ngFor="let obj of form.preload.userList" [value]="obj.key">
-              {{ obj.value }}
-            </option>
-          </select>
-        </div> -->
-
-        <div class="col-sm-2">
           <button class="btn btn-primary btn-md mr-2"
                   (click)="search()">Search</button>
 
@@ -97,24 +78,20 @@
 
       <!-- Table -->
       <div class="table-responsive mb-3">
-        <table class="table table-bordered table-dark table-hover">
+        <table class="table table-bordered table-hover table-dark">
           <thead>
             <tr style="background-color: #8C8C8C;">
-              <th width="5%">
+              <th width="6%">
                 <input type="checkbox"
-                       [(ngModel)]="isMasterSel"
-                       (change)="checkUncheckAll($event)"> Select All
+                  [(ngModel)]="isMasterSel"
+                  (change)="checkUncheckAll($event)"> Select All
               </th>
+
               <th class="text-center">S.No</th>
-              <th class="text-center">Profile</th>
-              <th class="text-center">First Name</th>
-              <th class="text-center">Last Name</th>
-              <th class="text-center">Login Id</th>
-              <th class="text-center">DOB</th>
-              <th class="text-center">Gender</th>
-              <th class="text-center">Role</th>
-              <th class="text-center">Mobile</th>
-              <th class="text-center">Status</th>
+              <th class="text-center">User ID</th>
+              <th class="text-center">Subscription Type</th>
+              <th class="text-center">Renewal Date</th>
+              <th class="text-center">Churn Risk</th>
               <th class="text-center">Edit</th>
             </tr>
           </thead>
@@ -124,37 +101,20 @@
 
               <td>
                 <input type="checkbox"
-                       #checkboxes
-                       (change)="checklistUpdate()"
-                       [id]="m.id"
-                       [value]="isMasterSel">
+                  #checkboxes
+                  (change)="checklistUpdate()"
+                  [id]="m.id"
+                  [value]="isMasterSel">
               </td>
 
               <td>{{ (form.pageNo * 5) + i + 1 }}</td>
-
-              <!-- Profile Image -->
-              <td *ngIf="m.imageId">
-                <img height="50px"
-                     src="http://localhost:8081/User/profilePic/{{m.id}}"
-                     class="img">
-              </td>
-
-              <td *ngIf="!m.imageId">
-                <img height="50px"
-                     src="https://i.pinimg.com/736x/9e/83/75/9e837528f01cf3f42119c5aeeed1b336.jpg">
-              </td>
-
-              <td>{{ m.firstName }}</td>
-              <td>{{ m.lastName }}</td>
-              <td>{{ m.loginId }}</td>
-              <td>{{ m.dob | date : 'dd-MM-yyyy' }}</td>
-              <td>{{ m.gender }}</td>
-              <td>{{ m.roleName }}</td>
-              <td>{{ m.phone }}</td>
-              <td>{{ m.status }}</td>
+              <td>{{ m.userId }}</td>
+              <td>{{ m.subscriptionType }}</td>
+              <td>{{ m.renewwalDate | date : 'dd-MM-yyyy' }}</td>
+              <td>{{ m.churnkRisk }}</td>
 
               <td>
-                <a (click)="forward('/user/' + m.id)"
+                <a (click)="forward('/ARObject/' + m.id)"
                    style="cursor: pointer;">
                   Edit
                 </a>
@@ -168,6 +128,7 @@
       <!-- Buttons -->
       <table width="100%">
         <tr>
+
           <td>
             <button class="btn btn-warning btn-md"
               (click)="previous()"
@@ -178,7 +139,7 @@
 
           <td class="text-center">
             <button class="btn btn-primary btn-md"
-              (click)="forward('/user')">
+              (click)="forward('/ARObject')">
               New
             </button>
           </td>
@@ -197,14 +158,15 @@
               Next
             </button>
           </td>
+
         </tr>
       </table>
 
     </div>
 
-    <!-- Empty State -->
+    <!-- Empty List -->
     <div *ngIf="form.list.length == 0" class="text-center mt-4">
-      <h3 class="text-danger">No Users Found</h3>
+      <h3 class="text-danger">No AR Object Found</h3>
       <br>
       <button class="btn btn-primary" (click)="reset()">Back</button>
     </div>

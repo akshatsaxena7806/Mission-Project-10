@@ -53,5 +53,7 @@ export class NavbarComponent {
   goToDoc() {
     window.open('assets/doc/index.html', '_blank');
 
+
   }
+
 }

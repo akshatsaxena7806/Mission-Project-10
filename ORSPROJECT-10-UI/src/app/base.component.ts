@@ -22,7 +22,7 @@ export class BaseCtl implements OnInit {
     get: '',
     save: '',
     search: '',
-    deleteMany: '',
+    deleteMany: '', 
     preload: '',
   };
 

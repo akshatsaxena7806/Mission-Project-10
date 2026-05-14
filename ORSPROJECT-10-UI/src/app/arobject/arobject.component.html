@@ -1,0 +1,174 @@
+<style>
+  .hm {
+    background-image: url('assets/img/welcome.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+</style>
+
+<app-navbar></app-navbar>
+
+<div class="hm">
+
+  <div class="row">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+      <div class="card input-group-addon">
+        <div class="card-body">
+
+          <!-- Title -->
+          <h3 class="text-center text-primary" *ngIf="!form.data.id">
+            Add AR Object
+          </h3>
+
+          <h3 class="text-center text-primary" *ngIf="form.data.id > 0">
+            Update AR Object
+          </h3>
+
+          <!-- Success Message -->
+          <div *ngIf="!form.error && form.message"
+               class="alert alert-success text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="form.error && form.message"
+               class="alert alert-danger text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- User ID -->
+          <span><b>User ID</b> <span style="color:red">*</span></span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-user"></i>
+              </div>
+            </div>
+            <input type="text"
+                   class="form-control"
+                   name="userId"
+                   [(ngModel)]="form.data.userId"
+                   placeholder="Enter User ID">
+          </div>
+          <small class="text-danger">{{ form.inputerror.userId }}</small>
+
+          <!-- Subscription Type -->
+          <span class="mt-2 d-block">
+            <b>Subscription Type</b>
+            <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-id-card"></i>
+              </div>
+            </div>
+
+            <select class="form-control"
+                    name="subscriptionType"
+                    [(ngModel)]="form.data.subscriptionType">
+
+              <option value="undefined">
+                ------------Select------------
+              </option>
+
+              <option value="Basic">Basic</option>
+              <option value="Premium">Premium</option>
+              <option value="Gold">Gold</option>
+
+            </select>
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.subscriptionType }}
+          </small>
+
+          <!-- Renewal Date -->
+          <span class="mt-2 d-block">
+            <b>Renewal Date</b>
+            <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-calendar"></i>
+              </div>
+            </div>
+
+            <input type="date"
+                   class="form-control"
+                   name="renewwalDate"
+                   [(ngModel)]="form.data.renewwalDate"
+                   [ngModel]="form.data.renewwalDate | date:'yyyy-MM-dd'">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.renewwalDate }}
+          </small>
+
+          <!-- Churn Risk -->
+          <span class="mt-2 d-block">
+            <b>Churn Risk</b>
+            <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-exclamation-triangle"></i>
+              </div>
+            </div>
+
+            <select class="form-control"
+                    name="ChurnkRisk"
+                    [(ngModel)]="form.data.churnkRisk">
+
+              <option value="undefined">
+                ------------Select------------
+              </option>
+
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+
+            </select>
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.churnkRisk }}
+          </small>
+
+          <!-- Buttons -->
+          <div class="text-center mt-3">
+
+            <button class="btn btn-success btn-md"
+                    (click)="submit()">
+              Save
+            </button>
+
+            &nbsp;
+
+            <button class="btn btn-warning btn-md"
+                    (click)="forward('arobjectlist')">
+              List
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

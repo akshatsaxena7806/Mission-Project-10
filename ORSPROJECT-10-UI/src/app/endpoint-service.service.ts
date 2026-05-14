@@ -17,6 +17,9 @@ export class EndpointServiceService {
   public MARKSHEET =this.SERVER_URL +'/Marksheet';
   public TIMETABLE =this.SERVER_URL +'/TimeTable';
   public FACULTY =this.SERVER_URL +'/Faculty';
+  public AROBJECT =this.SERVER_URL +'/ARObject';
+  public LANGUAGE =this.SERVER_URL +'/Language';
+  public DRONE =this.SERVER_URL +'/Drone';
 
 
 }

@@ -52,7 +52,7 @@ public class JWTUtil {
 
 		System.out.println("EXPIRATION tot: TIME=================>" + expMillis);
 
-		// JWT Header
+		// JWT Headernb
 		Map<String, Object> header = new HashMap<>();
 		header.put("alg", "HS256");
 		header.put("typ", "JWT");

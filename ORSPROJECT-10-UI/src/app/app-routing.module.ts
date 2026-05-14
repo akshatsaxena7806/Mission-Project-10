@@ -26,6 +26,12 @@ import { MarksheetmeritListComponent } from './marksheet/marksheetmerit-list.com
 import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
 import { MyprofileComponent } from './user/myprofile.component';
 import { ChangepasswordComponent } from './change-password/change-password.component';
+import { ARObjectComponent } from './arobject/arobject.component';
+import { ARObjectListComponent } from './arobject/arobject-list.component';
+import { LanguageListComponent } from './language/language-list.component';
+import { LanguageComponent } from './language/language.component';
+import { DroneListComponent } from './drone/drone-list.component';
+import { DroneComponent } from './drone/drone.component';
 
 
 
@@ -180,6 +186,42 @@ const routes: Routes = [
   {
   path:'changepassword',
   component:ChangepasswordComponent
+  },
+  {
+    path:'ARObject',
+    component:ARObjectComponent
+  },
+  {
+   path:'ARObject/:id',
+    component: ARObjectComponent
+  },
+  {
+  path:'ARObjectlist',
+  component:ARObjectListComponent
+  },
+  {
+    path:'Language',
+    component:LanguageComponent
+  },
+  {
+   path:'Language/:id',
+    component:LanguageComponent
+  },
+  {
+  path:'Languagelist',
+  component:LanguageListComponent
+  },
+   {
+    path:'Drone',
+    component:DroneComponent
+  },
+  {
+   path:'Drone/:id',
+    component:DroneComponent
+  },
+  {
+  path:'Dronelist',
+  component:DroneListComponent
   },
 
 ];

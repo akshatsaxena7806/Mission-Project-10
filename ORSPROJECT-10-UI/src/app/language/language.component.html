@@ -1,0 +1,159 @@
+<style>
+  .hm {
+    background-image: url('assets/img/welcome.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+</style>
+
+<app-navbar></app-navbar>
+
+<div class="hm">
+
+  <div class="row">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+      <div class="card input-group-addon">
+        <div class="card-body">
+
+          <!-- Title -->
+          <h3 class="text-center text-primary" *ngIf="!form.data.id">
+            Add Language
+          </h3>
+
+          <h3 class="text-center text-primary" *ngIf="form.data.id > 0">
+            Update Language
+          </h3>
+
+          <!-- Success Message -->
+          <div *ngIf="!form.error && form.message"
+               class="alert alert-success text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="form.error && form.message"
+               class="alert alert-danger text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Source Language -->
+          <span><b>Source Language</b> <span style="color:red">*</span></span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-language"></i>
+              </div>
+            </div>
+
+            <input type="text"
+                   class="form-control"
+                   name="sourceLanguage"
+                   [(ngModel)]="form.data.sourceLanguage"
+                   placeholder="Enter Source Language">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.sourceLanguage }}
+          </small>
+
+          <!-- Target Language -->
+          <span class="mt-2 d-block">
+            <b>Target Language</b> <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-exchange-alt"></i>
+              </div>
+            </div>
+
+            <input type="text"
+                   class="form-control"
+                   name="targetLanguage"
+                   [(ngModel)]="form.data.targetLanguage"
+                   placeholder="Enter Target Language">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.targetLanguage }}
+          </small>
+
+          <!-- Input Text -->
+          <span class="mt-2 d-block">
+            <b>Input Text</b> <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-pencil-alt"></i>
+              </div>
+            </div>
+
+            <textarea class="form-control"
+                      name="inputText"
+                      [(ngModel)]="form.data.inputText"
+                      placeholder="Enter Input Text"
+                      rows="3"></textarea>
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.inputText }}
+          </small>
+
+          <!-- Translated Text -->
+          <span class="mt-2 d-block">
+            <b>Translated Text</b> <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-language"></i>
+              </div>
+            </div>
+
+            <textarea class="form-control"
+                      name="translatedText"
+                      [(ngModel)]="form.data.translatedText"
+                      placeholder="Enter Translated Text"
+                      rows="3"></textarea>
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.translatedText }}
+          </small>
+
+          <!-- Buttons -->
+          <div class="text-center mt-3">
+
+            <button class="btn btn-success btn-md"
+                    (click)="submit()">
+              Save
+            </button>
+
+            &nbsp;
+
+            <button class="btn btn-warning btn-md"
+                    (click)="forward('Languagelist')">
+              List
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

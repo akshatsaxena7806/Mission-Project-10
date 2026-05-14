@@ -39,6 +39,12 @@ import { MarksheetmeritListComponent } from './marksheet/marksheetmerit-list.com
 import { MyprofileComponent } from './user/myprofile.component';
 import { SignupComponent } from './login/signup.component';
 import { ChangepasswordComponent } from './change-password/change-password.component';
+import { ARObjectComponent } from './arobject/arobject.component';
+import { ARObjectListComponent } from './arobject/arobject-list.component';
+import { LanguageComponent } from './language/language.component';
+import { LanguageListComponent } from './language/language-list.component';
+import { DroneComponent } from './drone/drone.component';
+import { DroneListComponent } from './drone/drone-list.component';
 
 
 
@@ -77,7 +83,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     GetmarksheetComponent,
     MarksheetmeritListComponent,
     MyprofileComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    ARObjectComponent,
+    ARObjectListComponent,
+    LanguageComponent,
+    LanguageListComponent,
+    DroneComponent,
+    DroneListComponent
     
 
   ],

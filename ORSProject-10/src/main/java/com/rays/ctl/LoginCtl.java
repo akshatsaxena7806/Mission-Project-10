@@ -50,6 +50,7 @@ public class LoginCtl extends BaseCtl<UserDTO, UserForm, UserServiceInt>{
 
 			String token = jwtUtil.generateToken(dto.getId(), dto.getLoginId(), dto.getRoleName());			
 
+			System.out.println("==============dasdasdasdasdasdasdasdasdasdasddasdas==========================>"+token);
 			res.setSuccess(true);
 			res.addData(dto);
 			res.addResult("loginId", dto.getLoginId());

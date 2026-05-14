@@ -18,13 +18,14 @@ import com.rays.common.FrontCtl;
 public class ORSProject10Application {
 
 	//	@Autowired
-	//	private FrontCtl frontCtl;
+	//	private FrontCtl frontCtl;		
 
 	/**
 	 * Application entry point.
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(ORSProject10Application.class, args);
+
 	}
 
 	/**

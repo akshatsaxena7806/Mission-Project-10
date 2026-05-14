@@ -83,7 +83,9 @@ public class UserCtl extends BaseCtl<UserDTO, UserForm, UserServiceInt> {
 		
 		try {
 			List<DropdownList> roleList = roleservice.search(dto, userContext);
+			List<DropdownList> userList = service.search(null, userContext);
 		res.addResult("roleList", roleList);
+		res.addResult("userList", userList);
 		
 		}catch (Exception e) {
 			res.addMessage(e.getMessage());

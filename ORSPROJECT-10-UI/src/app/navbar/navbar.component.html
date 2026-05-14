@@ -1,8 +1,9 @@
 <style>
   .aj {
-      background-image: linear-gradient(to bottom right, #b4eeff, #0086b7);
+    background-image: linear-gradient(to bottom right, #b4eeff, #0086b7);
   }
-    .img {
+
+  .img {
     width: 60px;
     height: 60px;
     /* border-radius: 50%; */
@@ -56,14 +57,15 @@
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color: #2F4156;">{{ 'Links.college'
             | translate }}</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" [routerLink]="['/college']"><i class="fa fa-university"></i> {{'Links.AddCollege'| translate }}</a>
+            <a class="dropdown-item" [routerLink]="['/college']"><i class="fa fa-university"></i> {{'Links.AddCollege'|
+              translate }}</a>
             <a class="dropdown-item" [routerLink]="['/collegelist']"><i class="fa fa-building"></i> {{
               'Links.CollegeList' | translate }}</a>
           </div>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color: #4c84c5;">{{ 'Links.student'
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color: #2F4156;">{{ 'Links.student'
             | translate }}</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" [routerLink]="['/student']"><i class="fa fa-user-circle"></i> {{ 'Links.AddStudent'
@@ -82,9 +84,9 @@
             <a class="dropdown-item" [routerLink]="['/marksheetlist']"><i class="fa fa-paste"></i> {{
               'Links.MarksheetList' | translate }}</a>
 
-              <a class="dropdown-item" [routerLink]="['/getmarksheet']"><i class="fa fa-paste"></i> {{
+            <a class="dropdown-item" [routerLink]="['/getmarksheet']"><i class="fa fa-paste"></i> {{
               'Links.GetMarksheet' | translate }}</a>
-              <a class="dropdown-item" [routerLink]="['/marksheetmerit-list']"><i class="fa fa-paste"></i> {{
+            <a class="dropdown-item" [routerLink]="['/marksheetmerit-list']"><i class="fa fa-paste"></i> {{
               'Links.MarksheetMeritList' | translate }}</a>
           </div>
         </li>
@@ -132,8 +134,24 @@
               | translate }}</a>
           </div>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" style="color: #ffffff;">
+          All usecases
+          </a>
+            <div class="dropdown-menu"> <a class="dropdown-item" [routerLink]="['/ARObject']"><i class="fa fa-cube"> Add ARObject</i></a>
+            <a class="dropdown-item" [routerLink]="['/ARObjectlist']"><i class="fa fa-list"></i> ARObject List </a>
+            <hr>
+            <a class="dropdown-item" [routerLink]="['/Language']"><i class="fa fa-language"></i> Add Language </a>
+            <a class="dropdown-item" [routerLink]="['/Languagelist']"><i class="fa fa-list"></i> Language List </a>
+            <hr>
+            <a class="dropdown-item" [routerLink]="['/Drone']"><i class="fa fa-helicopter"></i> Add Drone </a>
+            <a class="dropdown-item" [routerLink]="['/Dronelist']"><i class="fa fa-list"></i> Drone List </a>
+          
+                </div>
+          
+        </li>
 
-        <!-- Logged in user welcome dropdown -->
+        <!-- Logged in user welcome dropdown -->  
         <li class="nav-item dropdown ml-3">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
             <span style="color: #2F4156;">
@@ -147,7 +165,7 @@
               'Links.ChangePassword' | translate }}</a>
             <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out-alt"></i> {{ 'Links.Logout' | translate
               }}</a><a class="dropdown-item" (click)="goToDoc()"><i class="fa fa-clone"></i> Java Doc</a>
-              
+
           </div>
         </li>
 
