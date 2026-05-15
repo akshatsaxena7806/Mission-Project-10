@@ -21,6 +21,7 @@ export class BaseListCtl extends BaseCtl {
     override ngOnInit() {
         this.preload();
         this.search();
+        console.log(this.preload);
     }
 
     previous() {

@@ -32,6 +32,8 @@ import { LanguageListComponent } from './language/language-list.component';
 import { LanguageComponent } from './language/language.component';
 import { DroneListComponent } from './drone/drone-list.component';
 import { DroneComponent } from './drone/drone.component';
+import { LiveStreamingComponent } from './live-streaming/live-streaming.component';
+import { LiveStreamingListComponent } from './live-streaming/live-streaming-list.component';
 
 
 
@@ -211,7 +213,7 @@ const routes: Routes = [
   path:'Languagelist',
   component:LanguageListComponent
   },
-   {
+  {
     path:'Drone',
     component:DroneComponent
   },
@@ -222,6 +224,18 @@ const routes: Routes = [
   {
   path:'Dronelist',
   component:DroneListComponent
+  },
+  {
+    path:'LiveStreaming',
+    component:LiveStreamingComponent
+  },
+  {
+   path:'LiveStreaming/:id',
+    component:LiveStreamingComponent
+  },
+  {
+  path:'LiveStreaminglist',
+  component:LiveStreamingListComponent
   },
 
 ];

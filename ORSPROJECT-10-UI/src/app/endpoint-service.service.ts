@@ -20,6 +20,7 @@ export class EndpointServiceService {
   public AROBJECT =this.SERVER_URL +'/ARObject';
   public LANGUAGE =this.SERVER_URL +'/Language';
   public DRONE =this.SERVER_URL +'/Drone';
+  public LIVESTREAMING =this.SERVER_URL +'/LiveStreaming';
 
 
 }

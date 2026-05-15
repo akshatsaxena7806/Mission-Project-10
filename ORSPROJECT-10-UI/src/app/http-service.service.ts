@@ -25,7 +25,7 @@ export class HttpServiceService {
       callback(data)
     },(error)=>{
       this.handleError(error, callback);
-      
+
     });
     }
 private handleError(error: any, callback: any) {

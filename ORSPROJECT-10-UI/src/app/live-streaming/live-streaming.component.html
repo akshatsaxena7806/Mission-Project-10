@@ -22,11 +22,11 @@
 
           <!-- Title -->
           <h3 class="text-center text-primary" *ngIf="!form.data.id">
-            Add AR Object
+            Add Live Streaming
           </h3>
 
           <h3 class="text-center text-primary" *ngIf="form.data.id > 0">
-            Update AR Object
+            Update Live Streaming
           </h3>
 
           <!-- Success Message -->
@@ -41,96 +41,100 @@
             {{ form.message }}
           </div>
 
-          <!-- User ID -->
-          <span><b>User ID</b> <span style="color:red">*</span></span>
+          <!-- Stream Code -->
+          <span><b>Stream Code</b> <span style="color:red">*</span></span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-code"></i>
+              </div>
+            </div>
+
+            <input type="text"
+                   class="form-control"
+                   name="streamCode"
+                   [(ngModel)]="form.data.streamCode"
+                   placeholder="Enter Stream Code">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.streamCode }}
+          </small>
+
+          <!-- Streamer Name -->
+          <span class="mt-2 d-block">
+            <b>Streamer Name</b> <span style="color:red">*</span>
+          </span>
+
           <div class="input-group mb-2">
             <div class="input-group-prepend">
               <div class="input-group-text">
                 <i class="fa fa-user"></i>
               </div>
             </div>
+
             <input type="text"
                    class="form-control"
-                   name="userId"
-                   [(ngModel)]="form.data.userId"
-                   placeholder="Enter User ID">
-          </div>
-          <small class="text-danger">{{ form.inputerror.userId }}</small>
-
-          <!-- Subscription Type -->
-          <span class="mt-2 d-block">
-            <b>Subscription Type</b>
-            <span style="color:red">*</span>
-          </span>
-
-          <div class="input-group mb-2">
-            <div class="input-group-prepend">
-              <div class="input-group-text">
-                <i class="fa fa-id-card"></i>
-              </div>
-            </div>
-
-            
+                   name="streamerName"
+                   [(ngModel)]="form.data.streamerName"
+                   placeholder="Enter Streamer Name">
           </div>
 
           <small class="text-danger">
-            {{ form.inputerror.subscriptionType }}
+            {{ form.inputerror.streamerName }}
           </small>
 
-          <!-- Renewal Date -->
+          <!-- Viewers Count -->
           <span class="mt-2 d-block">
-            <b>Renewal Date</b>
-            <span style="color:red">*</span>
+            <b>Viewers Count</b> <span style="color:red">*</span>
           </span>
 
           <div class="input-group mb-2">
             <div class="input-group-prepend">
               <div class="input-group-text">
-                <i class="fa fa-calendar"></i>
+                <i class="fa fa-users"></i>
               </div>
             </div>
 
-            <input type="date"
+            <input type="text"
                    class="form-control"
-                   name="renewwalDate"
-                   [(ngModel)]="form.data.renewwalDate"
-                   [ngModel]="form.data.renewwalDate | date:'yyyy-MM-dd'">
+                   name="viewersCount"
+                   [(ngModel)]="form.data.viewersCount"
+                   placeholder="Enter Viewers Count">
           </div>
 
           <small class="text-danger">
-            {{ form.inputerror.renewwalDate }}
+            {{ form.inputerror.viewersCount }}
           </small>
 
-          <!-- Churn Risk -->
+          <!-- Status -->
           <span class="mt-2 d-block">
-            <b>Churn Risk</b>
-            <span style="color:red">*</span>
+            <b>Status</b> <span style="color:red">*</span>
           </span>
 
           <div class="input-group mb-2">
             <div class="input-group-prepend">
               <div class="input-group-text">
-                <i class="fa fa-exclamation-triangle"></i>
+                <i class="fa fa-signal"></i>
               </div>
             </div>
 
             <select class="form-control"
-                    name="ChurnkRisk"
-                    [(ngModel)]="form.data.churnkRisk">
+                    name="status"
+                    [(ngModel)]="form.data.status">
 
               <option value="undefined">
                 ------------Select------------
               </option>
 
-              <option value="Low">Low</option>
-              <option value="Medium">Medium</option>
-              <option value="High">High</option>
+              <option value="Live">Live</option>
+              <option value="Offline">Offline</option>
 
             </select>
           </div>
 
           <small class="text-danger">
-            {{ form.inputerror.churnkRisk }}
+            {{ form.inputerror.status }}
           </small>
 
           <!-- Buttons -->
@@ -144,7 +148,7 @@
             &nbsp;
 
             <button class="btn btn-warning btn-md"
-                    (click)="forward('arobjectlist')">
+                    (click)="forward('LiveStreaminglist')">
               List
             </button>
 

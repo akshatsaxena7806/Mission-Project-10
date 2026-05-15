@@ -45,6 +45,8 @@ import { LanguageComponent } from './language/language.component';
 import { LanguageListComponent } from './language/language-list.component';
 import { DroneComponent } from './drone/drone.component';
 import { DroneListComponent } from './drone/drone-list.component';
+import { LiveStreamingComponent } from './live-streaming/live-streaming.component';
+import { LiveStreamingListComponent } from './live-streaming/live-streaming-list.component';
 
 
 
@@ -89,7 +91,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     LanguageComponent,
     LanguageListComponent,
     DroneComponent,
-    DroneListComponent
+    DroneListComponent,
+    LiveStreamingComponent,
+    LiveStreamingListComponent
     
 
   ],
