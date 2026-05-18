@@ -21,6 +21,9 @@ export class EndpointServiceService {
   public LANGUAGE =this.SERVER_URL +'/Language';
   public DRONE =this.SERVER_URL +'/Drone';
   public LIVESTREAMING =this.SERVER_URL +'/LiveStreaming';
+  public GENDER=this.SERVER_URL +'/Gender';
+  public EMPLOYEE=this.SERVER_URL +'/Employee';
+
 
 
 }

@@ -34,6 +34,10 @@ import { DroneListComponent } from './drone/drone-list.component';
 import { DroneComponent } from './drone/drone.component';
 import { LiveStreamingComponent } from './live-streaming/live-streaming.component';
 import { LiveStreamingListComponent } from './live-streaming/live-streaming-list.component';
+import { GenderComponent } from './gender/gender.component';
+import { GenderListComponent } from './gender/gender-list.component';
+import { EmployeeListComponent } from './employee/employee-list.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 
@@ -237,7 +241,30 @@ const routes: Routes = [
   path:'LiveStreaminglist',
   component:LiveStreamingListComponent
   },
-
+  {
+    path:'Gender',
+    component:GenderComponent
+  },
+  {
+   path:'Gender/:id',
+    component:GenderComponent
+  },
+  {
+  path:'Genderlist',
+  component:GenderListComponent
+  },
+ {
+    path:'Employee',
+    component:EmployeeComponent
+  },
+  {
+   path:'Employee/:id',
+    component:EmployeeComponent
+  },
+  {
+  path:'Employeelist',
+  component:EmployeeListComponent
+  },
 ];
 
 @NgModule({
