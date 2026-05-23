@@ -23,7 +23,7 @@ export class EndpointServiceService {
   public LIVESTREAMING =this.SERVER_URL +'/LiveStreaming';
   public GENDER=this.SERVER_URL +'/Gender';
   public EMPLOYEE=this.SERVER_URL +'/Employee';
-
-
+  public ACHIVEMENTBADGE =this.SERVER_URL +'/AchievementBadge';
+  public WEATHERSYSTEM =this.SERVER_URL +'/WeatherSystem';
 
 }

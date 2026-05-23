@@ -38,6 +38,10 @@ import { GenderComponent } from './gender/gender.component';
 import { GenderListComponent } from './gender/gender-list.component';
 import { EmployeeListComponent } from './employee/employee-list.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { AchievementbadgeComponent } from './achievementbadge/achievementbadge.component';
+import { AchievementbadgeListComponent } from './achievementbadge/achievementbadge-list.component';
+import { weatherSystemComponent } from './weathersystem/weathersystem.component';
+import { WeatherSystemListComponent } from './weathersystem/weathersystem-list.component';
 
 
 
@@ -264,6 +268,30 @@ const routes: Routes = [
   {
   path:'Employeelist',
   component:EmployeeListComponent
+  },
+  {
+    path:'achievement',
+    component:AchievementbadgeComponent
+  },
+  {
+   path:'achievement/:id',
+    component:AchievementbadgeComponent
+  },
+  {
+  path:'achievementlist',
+  component:AchievementbadgeListComponent
+  },
+   {
+    path:'Weather',
+    component:weatherSystemComponent
+  },
+  {
+   path:'Weather/:id',
+    component:weatherSystemComponent
+  },
+  {
+  path:'Weatherlist',
+  component:WeatherSystemListComponent
   },
 ];
 

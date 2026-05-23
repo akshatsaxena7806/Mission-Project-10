@@ -51,6 +51,10 @@ import { GenderComponent } from './gender/gender.component';
 import { GenderListComponent } from './gender/gender-list.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeListComponent } from './employee/employee-list.component';
+import { AchievementbadgeComponent } from './achievementbadge/achievementbadge.component';
+import { AchievementbadgeListComponent } from './achievementbadge/achievementbadge-list.component';
+import { weatherSystemComponent } from './weathersystem/weathersystem.component';
+import { WeatherSystemListComponent } from './weathersystem/weathersystem-list.component';
 
 
 
@@ -101,7 +105,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     GenderComponent,
     GenderListComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    AchievementbadgeComponent,
+    AchievementbadgeListComponent,
+    WeatherSystemListComponent,
+    weatherSystemComponent
+   
     
 
   ],

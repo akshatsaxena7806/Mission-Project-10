@@ -10,26 +10,29 @@ import com.rays.common.BaseCtl;
 import com.rays.common.DropdownList;
 import com.rays.common.ORSResponse;
 import com.rays.dto.ARObjectDTO;
-import com.rays.dto.RoleDTO;
-import com.rays.form.ARObjectForm;
-import com.rays.service.ARObjectServiceInt;
+import com.rays.dto.AchievementBadgeDTO;
+import com.rays.form.AchievementBadgeForm;
+import com.rays.service.AchievementBadgeServiceInt;
+
 
 @RestController
-@RequestMapping(value = "ARObject")
-public class ARObjectCtl extends BaseCtl<ARObjectDTO, ARObjectForm, ARObjectServiceInt> {
+@RequestMapping(value = "AchievementBadge")
+public class AchievementBadgeCtl extends BaseCtl<AchievementBadgeDTO, AchievementBadgeForm, AchievementBadgeServiceInt> {
+
+	
 
 	@GetMapping("preload")
 	public ORSResponse preload () {
 		
 		ORSResponse res = new ORSResponse(true);
 		
-		ARObjectDTO dto = new ARObjectDTO();
+		AchievementBadgeDTO dto = new AchievementBadgeDTO();
 		
 		System.out.println("=======>" + dto.toString());
 		
 		try {
-			List<DropdownList> arObject = service.search(dto, userContext);
-		res.addResult("arObject", arObject);
+			List<DropdownList> AchievementBadge = service.search(dto, userContext);
+		res.addResult("AchievementBadge", AchievementBadge);
 		
 		}catch (Exception e) {
 			res.addMessage(e.getMessage());
@@ -42,5 +45,4 @@ public class ARObjectCtl extends BaseCtl<ARObjectDTO, ARObjectForm, ARObjectServ
 		return res;
 		
 	}
-	
 }
