@@ -42,6 +42,8 @@ import { AchievementbadgeComponent } from './achievementbadge/achievementbadge.c
 import { AchievementbadgeListComponent } from './achievementbadge/achievementbadge-list.component';
 import { weatherSystemComponent } from './weathersystem/weathersystem.component';
 import { WeatherSystemListComponent } from './weathersystem/weathersystem-list.component';
+import { BusReservationComponent } from './busreservation/busreservation.component';
+import { BusReservationListComponent } from './busreservation/bus-reservation-list.component';
 
 
 
@@ -281,7 +283,7 @@ const routes: Routes = [
   path:'achievementlist',
   component:AchievementbadgeListComponent
   },
-   {
+  {
     path:'Weather',
     component:weatherSystemComponent
   },
@@ -292,6 +294,18 @@ const routes: Routes = [
   {
   path:'Weatherlist',
   component:WeatherSystemListComponent
+  },
+  {
+    path:'BusReservation',
+    component:BusReservationComponent
+  },
+  {
+   path:'BusReservation/:id',
+    component:BusReservationComponent
+  },
+  {
+  path:'BusReservationList',
+  component:BusReservationListComponent
   },
 ];
 

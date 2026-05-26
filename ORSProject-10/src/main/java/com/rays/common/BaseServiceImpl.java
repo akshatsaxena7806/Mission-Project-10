@@ -33,7 +33,7 @@ public abstract class BaseServiceImpl<T extends BaseDTO, D extends BaseDAOInt<T>
         return id;
     }
 
-    /**
+    /**\
      * Updates an existing entity.
      *
      * @param dto         entity to update
@@ -48,7 +48,7 @@ public abstract class BaseServiceImpl<T extends BaseDTO, D extends BaseDAOInt<T>
     /**
      * Saves entity — updates if ID exists, otherwise adds new.
      *
-     * @param dto         entity to save
+     * @param dto entity to save
      * @param userContext current user context
      * @return primary key of saved entity
      */

@@ -25,5 +25,6 @@ export class EndpointServiceService {
   public EMPLOYEE=this.SERVER_URL +'/Employee';
   public ACHIVEMENTBADGE =this.SERVER_URL +'/AchievementBadge';
   public WEATHERSYSTEM =this.SERVER_URL +'/WeatherSystem';
+  public BUSRESERVATION =this.SERVER_URL +'/BusReservation';
 
 }

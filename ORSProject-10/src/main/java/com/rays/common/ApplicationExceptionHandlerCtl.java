@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 /**
  * Handles application propagated exceptions
  * 
- *akshat saxena
+ * Akshat saxena
  *
  */
 @RestControllerAdvice
-public class ApplicationExceptionHandlerCtl {
+public class ApplicationExceptionHandlerCtl{
 
     // All database related problems
     @ExceptionHandler({

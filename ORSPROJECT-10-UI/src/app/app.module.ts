@@ -55,8 +55,8 @@ import { AchievementbadgeComponent } from './achievementbadge/achievementbadge.c
 import { AchievementbadgeListComponent } from './achievementbadge/achievementbadge-list.component';
 import { weatherSystemComponent } from './weathersystem/weathersystem.component';
 import { WeatherSystemListComponent } from './weathersystem/weathersystem-list.component';
-
-
+import { BusReservationComponent } from './busreservation/busreservation.component';
+import { BusReservationListComponent } from './busreservation/bus-reservation-list.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -109,7 +109,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AchievementbadgeComponent,
     AchievementbadgeListComponent,
     WeatherSystemListComponent,
-    weatherSystemComponent
+    weatherSystemComponent,
+    BusReservationListComponent,
+    BusReservationComponent,
    
     
 

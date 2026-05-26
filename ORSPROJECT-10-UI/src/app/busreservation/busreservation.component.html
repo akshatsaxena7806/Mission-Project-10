@@ -1,0 +1,190 @@
+<style>
+  .hm {
+    background-image: url('assets/img/welcome.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+</style>
+
+<app-navbar></app-navbar>
+
+<div class="hm">
+
+  <div class="row">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+      <div class="card input-group-addon">
+        <div class="card-body">
+
+          <!-- Title -->
+          <h3 class="text-center text-primary" *ngIf="!form.data.id">
+            Add Bus Reservation
+          </h3>
+
+          <h3 class="text-center text-primary" *ngIf="form.data.id > 0">
+            Update Bus Reservation
+          </h3>
+
+          <!-- Success Message -->
+          <div *ngIf="!form.error && form.message"
+               class="alert alert-success text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="form.error && form.message"
+               class="alert alert-danger text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Bus Number -->
+          <span>
+            <b>Bus Number</b>
+            <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-bus"></i>
+              </div>
+            </div>
+
+            <input type="text"
+                   class="form-control"
+                   name="busNo"
+                   [(ngModel)]="form.data.busNo"
+                   placeholder="Enter Bus Number">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.busNo }}
+          </small>
+
+          <!-- Passenger Name -->
+          <span class="mt-2 d-block">
+            <b>Passenger Name</b>
+            <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-user"></i>
+              </div>
+            </div>
+
+            <input type="text"
+                   class="form-control"
+                   name="passengerName"
+                   [(ngModel)]="form.data.passengerName"
+                   placeholder="Enter Passenger Name">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.passengerName }}
+          </small>
+
+          <!-- Source -->
+          <span class="mt-2 d-block">
+            <b>Source</b>
+            <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-map-marker"></i>
+              </div>
+            </div>
+
+            <input type="text"
+                   class="form-control"
+                   name="source"
+                   [(ngModel)]="form.data.source"
+                   placeholder="Enter Source">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.source }}
+          </small>
+
+          <!-- Destination -->
+          <span class="mt-2 d-block">
+            <b>Destination</b>
+            <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-location-arrow"></i>
+              </div>
+            </div>
+
+            <input type="text"
+                   class="form-control"
+                   name="destination"
+                   [(ngModel)]="form.data.destination"
+                   placeholder="Enter Destination">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.destination }}
+          </small>
+
+          <!-- Ticket Fare -->
+          <span class="mt-2 d-block">
+            <b>Ticket Fare</b>
+            <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-money"></i>
+              </div>
+            </div>
+
+            <input type="number"
+                   class="form-control"
+                   name="ticketFare"
+                   [(ngModel)]="form.data.ticketFare"
+                   placeholder="Enter Ticket Fare">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.ticketFare }}
+          </small>
+
+          <!-- Buttons -->
+          <div class="text-center mt-3">
+
+            <button class="btn btn-success btn-md"
+                    (click)="submit()">
+              Save
+            </button>
+
+            &nbsp;
+
+            <button class="btn btn-warning btn-md"
+                    (click)="forward('BusReservationList')">
+              List
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

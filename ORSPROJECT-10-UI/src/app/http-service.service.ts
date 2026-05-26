@@ -28,7 +28,7 @@ export class HttpServiceService {
 
     });
     }
-private handleError(error: any, callback: any) {
+    private handleError(error: any, callback: any) {
     if (error.status === 503) {
       console.log(error.error);    
       console.log(error)
