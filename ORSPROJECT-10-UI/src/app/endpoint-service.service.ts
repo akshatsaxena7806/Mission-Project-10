@@ -26,5 +26,6 @@ export class EndpointServiceService {
   public ACHIVEMENTBADGE =this.SERVER_URL +'/AchievementBadge';
   public WEATHERSYSTEM =this.SERVER_URL +'/WeatherSystem';
   public BUSRESERVATION =this.SERVER_URL +'/BusReservation';
+   public ELECTRICITYBILL =this.SERVER_URL +'/ElectricityBill';
 
 }

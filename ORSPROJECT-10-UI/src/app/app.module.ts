@@ -57,6 +57,8 @@ import { weatherSystemComponent } from './weathersystem/weathersystem.component'
 import { WeatherSystemListComponent } from './weathersystem/weathersystem-list.component';
 import { BusReservationComponent } from './busreservation/busreservation.component';
 import { BusReservationListComponent } from './busreservation/bus-reservation-list.component';
+import { ElectricityBillComponent } from './electricity-bill/electricity-bill.component';
+import { ElectricityBillListComponent } from './electricity-bill/electricity-bill-list.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -112,6 +114,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     weatherSystemComponent,
     BusReservationListComponent,
     BusReservationComponent,
+    ElectricityBillComponent,
+    ElectricityBillListComponent,
    
     
 

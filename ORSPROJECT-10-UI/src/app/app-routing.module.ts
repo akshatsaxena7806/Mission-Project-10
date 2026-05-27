@@ -44,6 +44,8 @@ import { weatherSystemComponent } from './weathersystem/weathersystem.component'
 import { WeatherSystemListComponent } from './weathersystem/weathersystem-list.component';
 import { BusReservationComponent } from './busreservation/busreservation.component';
 import { BusReservationListComponent } from './busreservation/bus-reservation-list.component';
+import { ElectricityBillComponent } from './electricity-bill/electricity-bill.component';
+import { ElectricityBillListComponent } from './electricity-bill/electricity-bill-list.component';
 
 
 
@@ -306,6 +308,18 @@ const routes: Routes = [
   {
   path:'BusReservationList',
   component:BusReservationListComponent
+  },
+  {
+   path:'ElectricityBill',
+    component:ElectricityBillComponent
+  },
+  {
+   path:'ElectricityBill/:id',
+    component:ElectricityBillComponent
+  },
+  {
+  path:'ElectricityBillList',
+  component:ElectricityBillListComponent
   },
 ];
 
