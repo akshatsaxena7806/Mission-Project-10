@@ -59,6 +59,8 @@ import { BusReservationComponent } from './busreservation/busreservation.compone
 import { BusReservationListComponent } from './busreservation/bus-reservation-list.component';
 import { ElectricityBillComponent } from './electricity-bill/electricity-bill.component';
 import { ElectricityBillListComponent } from './electricity-bill/electricity-bill-list.component';
+import { GymManagementComponent } from './gym-management/gym-management.component';
+import { GymManagementListComponent } from './gym-management/gym-management-list.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -116,6 +118,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     BusReservationComponent,
     ElectricityBillComponent,
     ElectricityBillListComponent,
+    GymManagementComponent,
+    GymManagementListComponent,
    
     
 

@@ -46,6 +46,8 @@ import { BusReservationComponent } from './busreservation/busreservation.compone
 import { BusReservationListComponent } from './busreservation/bus-reservation-list.component';
 import { ElectricityBillComponent } from './electricity-bill/electricity-bill.component';
 import { ElectricityBillListComponent } from './electricity-bill/electricity-bill-list.component';
+import { GymManagementComponent } from './gym-management/gym-management.component';
+import { GymManagementListComponent } from './gym-management/gym-management-list.component';
 
 
 
@@ -320,6 +322,18 @@ const routes: Routes = [
   {
   path:'ElectricityBillList',
   component:ElectricityBillListComponent
+  },
+  {
+   path:'GymManagement',
+    component:GymManagementComponent
+  },
+  {
+   path:'GymManagement/:id',
+    component:GymManagementComponent
+  },
+  {
+  path:'GymManagementList',
+  component:GymManagementListComponent
   },
 ];
 

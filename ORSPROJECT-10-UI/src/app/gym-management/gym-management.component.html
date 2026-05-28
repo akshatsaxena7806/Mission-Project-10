@@ -1,0 +1,190 @@
+<style>
+  .hm {
+    background-image: url('assets/img/welcome.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+</style>
+
+<app-navbar></app-navbar>
+
+<div class="hm">
+
+  <div class="row">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+      <div class="card input-group-addon">
+        <div class="card-body">
+
+          <!-- Title -->
+          <h3 class="text-center text-primary" *ngIf="!form.data.id">
+            Add Gym Management
+          </h3>
+
+          <h3 class="text-center text-primary" *ngIf="form.data.id > 0">
+            Update Gym Management
+          </h3>
+
+          <!-- Success Message -->
+          <div *ngIf="!form.error && form.message"
+               class="alert alert-success text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="form.error && form.message"
+               class="alert alert-danger text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Member ID -->
+          <span><b>Member ID</b> <span style="color:red">*</span></span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-id-card"></i>
+              </div>
+            </div>
+            <input type="text"
+                   class="form-control"
+                   name="memberId"
+                   [(ngModel)]="form.data.memberId"
+                   placeholder="Enter Member ID">
+          </div>
+          <small class="text-danger">
+            {{ form.inputerror.memberId }}
+          </small>
+
+          <!-- Member Name -->
+          <span class="mt-2 d-block">
+            <b>Member Name</b> <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-user"></i>
+              </div>
+            </div>
+
+            <input type="text"
+                   class="form-control"
+                   name="memberName"
+                   [(ngModel)]="form.data.memberName"
+                   placeholder="Enter Member Name">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.memberName }}
+          </small>
+
+          <!-- Trainer Name -->
+          <span class="mt-2 d-block">
+            <b>Trainer Name</b> <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-user-circle"></i>
+              </div>
+            </div>
+
+            <input type="text"
+                   class="form-control"
+                   name="trainerName"
+                   [(ngModel)]="form.data.trainerName"
+                   placeholder="Enter Trainer Name">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.trainerName }}
+          </small>
+
+          <!-- Membership Fee -->
+          <span class="mt-2 d-block">
+            <b>Membership Fee</b> <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-money-bill"></i>
+              </div>
+            </div>
+
+            <input type="number"
+                   class="form-control"
+                   name="membershipFee"
+                   [(ngModel)]="form.data.membershipFee"
+                   placeholder="Enter Membership Fee">
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.membershipFee }}
+          </small>
+
+          <!-- Workout Type -->
+          <span class="mt-2 d-block">
+            <b>Workout Type</b> <span style="color:red">*</span>
+          </span>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-dumbbell"></i>
+              </div>
+            </div>
+
+            <select class="form-control"
+                    name="workoutType"
+                    [(ngModel)]="form.data.workoutType">
+
+              <option value="undefined">
+                ------------Select------------
+              </option>
+
+              <option value="Cardio">Cardio</option>
+              <option value="Strength Training">Strength Training</option>
+              <option value="Yoga">Yoga</option>
+              <option value="CrossFit">CrossFit</option>
+              <option value="Zumba">Zumba</option>
+
+            </select>
+          </div>
+
+          <small class="text-danger">
+            {{ form.inputerror.workoutType }}
+          </small>
+
+          <!-- Buttons -->
+          <div class="text-center mt-3">
+
+            <button class="btn btn-success btn-md"
+                    (click)="submit()">
+              Save
+            </button>
+
+            &nbsp;
+
+            <button class="btn btn-warning btn-md"
+                    (click)="forward('GymManagementList')">
+              List
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>
