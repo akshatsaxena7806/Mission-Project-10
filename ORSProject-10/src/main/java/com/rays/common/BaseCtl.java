@@ -118,14 +118,14 @@ public class BaseCtl<T extends BaseDTO, F extends BaseForm, S extends BaseServic
 
                 if (existDto1 != null && dto.getId() != existDto1.getId()) {
                     res.setSuccess(false);
-                    res.addMessage(dto.getLabel() + "alrady exixt");
+                    res.addMessage(dto.getLabel() + " alrady exixt");
                     return res;
 
                 }
                 System.out.println("CHECK CODE ============> " + existDto1.getUniqueKey() + existDto1.getUniqueValue());
                 service.save(dto, userContext);
                 res.setSuccess(true);
-                res.addMessage(dto.getTableName() + "data updated successfully");
+                res.addMessage(dto.getTableName() + " data updated successfully");
                 res.addData(dto.getId());
 
             } else {

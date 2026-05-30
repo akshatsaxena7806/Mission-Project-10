@@ -123,7 +123,7 @@ export class BaseCtl implements OnInit {
         _self.form.error = false;
         _self.form.list = res.result.data;
         _self.form.nextListSize = res.result.nextListSize;
-      } else {
+      } else {  
         _self.form.error = true;
         _self.form.message = res.result.message;
       }

@@ -48,6 +48,8 @@ import { ElectricityBillComponent } from './electricity-bill/electricity-bill.co
 import { ElectricityBillListComponent } from './electricity-bill/electricity-bill-list.component';
 import { GymManagementComponent } from './gym-management/gym-management.component';
 import { GymManagementListComponent } from './gym-management/gym-management-list.component';
+import { AtmSystemComponent } from './atmsystem/atmsystem.component';
+import { AtmSystemListComponent } from './atmsystem/atmsystem-list.component';
 
 
 
@@ -334,6 +336,18 @@ const routes: Routes = [
   {
   path:'GymManagementList',
   component:GymManagementListComponent
+  },
+   {
+   path:'ATMSystem',
+    component:AtmSystemComponent
+  },
+  {
+   path:'ATMSystem/:id',
+    component:AtmSystemComponent
+  },
+  {
+  path:'ATMSystemList',
+  component:AtmSystemListComponent
   },
 ];
 

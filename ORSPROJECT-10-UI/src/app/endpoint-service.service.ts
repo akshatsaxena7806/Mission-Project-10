@@ -28,5 +28,6 @@ export class EndpointServiceService {
   public BUSRESERVATION =this.SERVER_URL +'/BusReservation';
   public ELECTRICITYBILL =this.SERVER_URL +'/ElectricityBill';
   public GYMMANAGEMENT =this.SERVER_URL +'/GymManagement';
+  public ATMSYSTEM =this.SERVER_URL +'/ATMSystem';
 
 }

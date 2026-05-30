@@ -61,6 +61,8 @@ import { ElectricityBillComponent } from './electricity-bill/electricity-bill.co
 import { ElectricityBillListComponent } from './electricity-bill/electricity-bill-list.component';
 import { GymManagementComponent } from './gym-management/gym-management.component';
 import { GymManagementListComponent } from './gym-management/gym-management-list.component';
+import { AtmSystemComponent } from './atmsystem/atmsystem.component';
+import { AtmSystemListComponent } from './atmsystem/atmsystem-list.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -120,6 +122,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ElectricityBillListComponent,
     GymManagementComponent,
     GymManagementListComponent,
+    AtmSystemComponent,
+    AtmSystemListComponent,
    
     
 
