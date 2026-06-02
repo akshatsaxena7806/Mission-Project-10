@@ -1,0 +1,145 @@
+<style>
+  .hm {
+    background-image: url('assets/img/welcome.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+</style>
+
+<app-navbar></app-navbar>
+
+<div class="hm">
+
+  <div class="row">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+      <div class="card input-group-addon">
+        <div class="card-body">
+
+          <!-- Title -->
+          <h3 class="text-center text-primary" *ngIf="!form.data.id">
+            Add Hospital Record
+          </h3>
+
+          <h3 class="text-center text-primary" *ngIf="form.data.id > 0">
+            Update Hospital Record
+          </h3>
+
+          <!-- Success Message -->
+          <div *ngIf="!form.error && form.message"
+               class="alert alert-success text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="form.error && form.message"
+               class="alert alert-danger text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Patient ID -->
+          
+           
+          <!-- Patient Name -->
+          <span class="mt-2 d-block">
+            <b>Patient Name</b> <span style="color:red">*</span>
+          </span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-user"></i>
+              </div>
+            </div>
+            <input type="text"
+                   class="form-control"
+                   name="patientName"
+                   [(ngModel)]="form.data.patientName"
+                   placeholder="Enter Patient Name">
+          </div>
+          <small class="text-danger">{{ form.inputerror.patientName }}</small>
+
+          <!-- Doctor Name -->
+          <span class="mt-2 d-block">
+            <b>Doctor Name</b> <span style="color:red">*</span>
+          </span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-user-md"></i>
+              </div>
+            </div>
+            <input type="text"
+                   class="form-control"
+                   name="doctorName"
+                   [(ngModel)]="form.data.doctorName"
+                   placeholder="Enter Doctor Name">
+          </div>
+          <small class="text-danger">{{ form.inputerror.doctorName }}</small>
+
+          <!-- Disease -->
+          <span class="mt-2 d-block">
+            <b>Disease</b> <span style="color:red">*</span>
+          </span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-heartbeat"></i>
+              </div>
+            </div>
+            <input type="text"
+                   class="form-control"
+                   name="disease"
+                   [(ngModel)]="form.data.disease"
+                   placeholder="Enter Disease">
+          </div>
+          <small class="text-danger">{{ form.inputerror.disease }}</small>
+
+          <!-- Room Number -->
+          <span class="mt-2 d-block">
+            <b>Room Number</b> <span style="color:red">*</span>
+          </span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-hospital-o"></i>
+              </div>
+            </div>
+            <input type="number"
+                   class="form-control"
+                   name="roomNumber"
+                   [(ngModel)]="form.data.roomNumber"
+                   placeholder="Enter Room Number">
+          </div>
+          <small class="text-danger">{{ form.inputerror.roomNumber }}</small>
+
+          <!-- Buttons -->
+          <div class="text-center mt-3">
+
+            <button class="btn btn-success btn-md"
+                    (click)="submit()">
+              Save
+            </button>
+
+            &nbsp;
+
+            <button class="btn btn-warning btn-md"
+                    (click)="forward('HospitalSystemList')">
+              List
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

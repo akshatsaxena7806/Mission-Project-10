@@ -47,32 +47,35 @@
       <div class="row mb-3">
         <div class="col-sm-2"></div>
 
-        <div class="col-sm-3">
-          <input type="text"
-                 name="brokerId"
-                 [(ngModel)]="form.searchParams.brokerId"
-                 placeholder="Enter Broker ID"
-                 class="form-control">
-        </div>
+       <div class="mx-2 d-flex align-items-center">
+    &nbsp;
+
+
+    <select class="form-control"
+            name="brokerName"
+            [(ngModel)]="form.searchParams.brokerName">
+
+        <option value="undefined" >------Select Broker Name ------</option>
+
+        <option *ngFor="let obj of form.preload.Broker"[value]="obj.value">{{ obj.value }}</option>
+
+    </select>
+</div>
 
         <div class="col-sm-3">
           <input type="text"
-                 name="brokerName"
-                 [(ngModel)]="form.searchParams.brokerName"
-                 placeholder="Enter Broker Name"
+                 name="company"
+                 [(ngModel)]="form.searchParams.company"
+                 placeholder="Enter Company Name"
                  class="form-control">
         </div>
 
         <div class="col-sm-3">
           <button class="btn btn-primary btn-md mr-2"
-                  (click)="search()">
-            Search
-          </button>
+                  (click)="search()">Search</button>
 
           <button class="btn btn-dark btn-md"
-                  (click)="reset()">
-            Reset
-          </button>
+                  (click)="reset()">Reset</button>
         </div>
 
         <div class="col-sm-1"></div>
@@ -117,7 +120,7 @@
               <td>{{ m.company }}</td>
 
               <td>
-                <a (click)="forward('/broker/' + m.id)"
+                <a (click)="forward('/Broker/' + m.id)"
                    style="cursor: pointer;">
                   Edit
                 </a>
@@ -142,7 +145,7 @@
 
           <td class="text-center">
             <button class="btn btn-primary btn-md"
-                    (click)="forward('/broker')">
+                    (click)="forward('/Broker')">
               New
             </button>
           </td>

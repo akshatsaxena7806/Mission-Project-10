@@ -29,5 +29,7 @@ export class EndpointServiceService {
   public ELECTRICITYBILL =this.SERVER_URL +'/ElectricityBill';
   public GYMMANAGEMENT =this.SERVER_URL +'/GymManagement';
   public ATMSYSTEM =this.SERVER_URL +'/ATMSystem';
+  public HOSPITALSYSTEM =this.SERVER_URL +'/HospitalSystem';
+  public BROKER =this.SERVER_URL +'/Broker';
 
 }

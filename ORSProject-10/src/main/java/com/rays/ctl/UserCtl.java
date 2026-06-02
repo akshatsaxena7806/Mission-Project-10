@@ -37,6 +37,7 @@ import com.rays.service.UserServiceInt;
 public class UserCtl extends BaseCtl<UserDTO, UserForm, UserServiceInt> {
 	
 	
+	
 	@Autowired
 	private RoleServiceInt roleservice;
 	

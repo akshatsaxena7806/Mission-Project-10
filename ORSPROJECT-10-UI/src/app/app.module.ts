@@ -63,6 +63,10 @@ import { GymManagementComponent } from './gym-management/gym-management.componen
 import { GymManagementListComponent } from './gym-management/gym-management-list.component';
 import { AtmSystemComponent } from './atmsystem/atmsystem.component';
 import { AtmSystemListComponent } from './atmsystem/atmsystem-list.component';
+import { HospitalSystemComponent } from './hospitalsystem/hospitalsystem.component';
+import { HospitalSystemListComponent } from './hospitalsystem/hospitalsystem-list.component';
+import { BrokerComponent } from './broker/broker.component';
+import { BrokerListComponent } from './broker/broker-list.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -124,6 +128,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     GymManagementListComponent,
     AtmSystemComponent,
     AtmSystemListComponent,
+HospitalSystemComponent,
+HospitalSystemListComponent,
+BrokerComponent,
+BrokerListComponent,
+
    
     
 

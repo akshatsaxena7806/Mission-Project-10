@@ -50,6 +50,10 @@ import { GymManagementComponent } from './gym-management/gym-management.componen
 import { GymManagementListComponent } from './gym-management/gym-management-list.component';
 import { AtmSystemComponent } from './atmsystem/atmsystem.component';
 import { AtmSystemListComponent } from './atmsystem/atmsystem-list.component';
+import { HospitalSystemComponent } from './hospitalsystem/hospitalsystem.component';
+import { HospitalSystemListComponent } from './hospitalsystem/hospitalsystem-list.component';
+import { BrokerComponent } from './broker/broker.component';
+import { BrokerListComponent } from './broker/broker-list.component';
 
 
 
@@ -337,8 +341,8 @@ const routes: Routes = [
   path:'GymManagementList',
   component:GymManagementListComponent
   },
-   {
-   path:'ATMSystem',
+  {
+  path:'ATMSystem',
     component:AtmSystemComponent
   },
   {
@@ -348,6 +352,30 @@ const routes: Routes = [
   {
   path:'ATMSystemList',
   component:AtmSystemListComponent
+  },
+  {
+  path:'HospitalSystem',
+    component:HospitalSystemComponent
+  },
+  {
+   path:'HospitalSystem/:id',
+    component:HospitalSystemComponent
+  },
+  {
+  path:'HospitalSystemList',
+  component:HospitalSystemListComponent
+  },
+  {
+  path:'Broker',
+    component:BrokerComponent
+  },
+  {
+   path:'Broker/:id',
+    component:BrokerComponent
+  },
+  {
+  path:'BrokerList',
+  component:BrokerListComponent
   },
 ];
 

@@ -16,7 +16,7 @@
 
     <!-- Title -->
     <div align="center">
-      <h1 style="color: white;"><u>Broker List</u></h1>
+      <h1 style="color: white;"><u>Hospital System List</u></h1>
     </div>
 
     <!-- Success Message -->
@@ -49,30 +49,26 @@
 
         <div class="col-sm-3">
           <input type="text"
-                 name="brokerId"
-                 [(ngModel)]="form.searchParams.brokerId"
-                 placeholder="Enter Broker ID"
+                 name="patientName"
+                 [(ngModel)]="form.searchParams.patientName"
+                 placeholder="Enter Patient Name"
                  class="form-control">
         </div>
 
         <div class="col-sm-3">
           <input type="text"
-                 name="brokerName"
-                 [(ngModel)]="form.searchParams.brokerName"
-                 placeholder="Enter Broker Name"
+                 name="doctorName"
+                 [(ngModel)]="form.searchParams.doctorName"
+                 placeholder="Enter Doctor Name"
                  class="form-control">
         </div>
 
         <div class="col-sm-3">
           <button class="btn btn-primary btn-md mr-2"
-                  (click)="search()">
-            Search
-          </button>
+                  (click)="search()">Search</button>
 
           <button class="btn btn-dark btn-md"
-                  (click)="reset()">
-            Reset
-          </button>
+                  (click)="reset()">Reset</button>
         </div>
 
         <div class="col-sm-1"></div>
@@ -91,10 +87,11 @@
               </th>
 
               <th class="text-center">S.No</th>
-              <th class="text-center">Broker ID</th>
-              <th class="text-center">Broker Name</th>
-              <th class="text-center">Contact Number</th>
-              <th class="text-center">Company</th>
+              
+              <th class="text-center">Patient Name</th>
+              <th class="text-center">Doctor Name</th>
+              <th class="text-center">Disease</th>
+              <th class="text-center">Room Number</th>
               <th class="text-center">Edit</th>
             </tr>
           </thead>
@@ -111,18 +108,18 @@
               </td>
 
               <td>{{ (form.pageNo * 5) + i + 1 }}</td>
-              <td>{{ m.brokerId }}</td>
-              <td>{{ m.brokerName }}</td>
-              <td>{{ m.contactNumber }}</td>
-              <td>{{ m.company }}</td>
+              
+              <td>{{ m.patientName }}</td>
+              <td>{{ m.doctorName }}</td>
+              <td>{{ m.disease }}</td>
+              <td>{{ m.roomNumber }}</td>
 
               <td>
-                <a (click)="forward('/broker/' + m.id)"
+                <a (click)="forward('/HospitalSystem/' + m.id)"
                    style="cursor: pointer;">
                   Edit
                 </a>
               </td>
-
             </tr>
           </tbody>
         </table>
@@ -142,7 +139,7 @@
 
           <td class="text-center">
             <button class="btn btn-primary btn-md"
-                    (click)="forward('/broker')">
+                    (click)="forward('/HospitalSystem')">
               New
             </button>
           </td>
@@ -169,12 +166,9 @@
 
     <!-- Empty List -->
     <div *ngIf="form.list.length == 0" class="text-center mt-4">
-      <h3 class="text-danger">No Broker Found</h3>
+      <h3 class="text-danger">No Hospital Records Found</h3>
       <br>
-      <button class="btn btn-primary"
-              (click)="reset()">
-        Back
-      </button>
+      <button class="btn btn-primary" (click)="reset()">Back</button>
     </div>
 
   </div>
