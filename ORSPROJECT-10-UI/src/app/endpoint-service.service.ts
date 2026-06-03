@@ -31,5 +31,6 @@ export class EndpointServiceService {
   public ATMSYSTEM =this.SERVER_URL +'/ATMSystem';
   public HOSPITALSYSTEM =this.SERVER_URL +'/HospitalSystem';
   public BROKER =this.SERVER_URL +'/Broker';
+  public TRACKING =this.SERVER_URL +'/Tracking';
 
 }

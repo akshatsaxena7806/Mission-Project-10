@@ -1,0 +1,160 @@
+<style>
+  .hm {
+    background-image: url('assets/img/welcome.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+</style>
+
+<app-navbar></app-navbar>
+
+<div class="hm">
+
+  <div class="row">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4">
+      <div class="card input-group-addon">
+        <div class="card-body">
+
+          <!-- Title -->
+          <h3 class="text-center text-primary" *ngIf="!form.data.id">
+            Add Tracking
+          </h3>
+
+          <h3 class="text-center text-primary" *ngIf="form.data.id > 0">
+            Update Tracking
+          </h3>
+
+          <!-- Success Message -->
+          <div *ngIf="!form.error && form.message"
+               class="alert alert-success text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="form.error && form.message"
+               class="alert alert-danger text-center">
+            {{ form.message }}
+          </div>
+
+          <!-- Tracking ID -->
+          <span>
+            <b>Tracking ID</b> <span style="color:red">*</span>
+          </span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-id-card"></i>
+              </div>
+            </div>
+            <input type="text"
+                   class="form-control"
+                   name="trackintId"
+                   [(ngModel)]="form.data.trackintId"
+                   placeholder="Enter Tracking ID">
+          </div>
+          <small class="text-danger">
+            {{ form.inputerror.trackintId }}
+          </small>
+
+          <!-- Tracking Number -->
+          <span class="mt-2 d-block">
+            <b>Tracking Number</b> <span style="color:red">*</span>
+          </span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-truck"></i>
+              </div>
+            </div>
+            <input type="text"
+                   class="form-control"
+                   name="trackingNumber"
+                   [(ngModel)]="form.data.trackingNumber"
+                   placeholder="Enter Tracking Number">
+          </div>
+          <small class="text-danger">
+            {{ form.inputerror.trackingNumber }}
+          </small>
+
+          <!-- Current Location -->
+          <span class="mt-2 d-block">
+            <b>Current Location</b> <span style="color:red">*</span>
+          </span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-map-marker"></i>
+              </div>
+            </div>
+            <input type="text"
+                   class="form-control"
+                   name="currentLocation"
+                   [(ngModel)]="form.data.currentLocation"
+                   placeholder="Enter Current Location">
+          </div>
+          <small class="text-danger">
+            {{ form.inputerror.currentLocation }}
+          </small>
+
+          <!-- Status Dropdown -->
+          <span class="mt-2 d-block">
+            <b>Status</b> <span style="color:red">*</span>
+          </span>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-info-circle"></i>
+              </div>
+            </div>
+
+            <select class="form-control"
+                    name="status"
+                    
+                    [(ngModel)]="form.data.status">
+ <option value="undefined">------Select Status------</option>
+              
+              <option value="Pending">Pending</option>
+              <option value="Picked Up">Picked Up</option>
+              <option value="In Transit">In Transit</option>
+              <option value="Out For Delivery">Out For Delivery</option>
+              <option value="Delivered">Delivered</option>
+              <option value="Cancelled">Cancelled</option>
+
+            </select>
+          </div>
+          <small class="text-danger">
+            {{ form.inputerror.status }}
+          </small>
+
+          <!-- Buttons -->
+          <div class="text-center mt-3">
+
+            <button class="btn btn-success btn-md"
+                    (click)="submit()">
+              Save
+            </button>
+
+            &nbsp;
+
+            <button class="btn btn-warning btn-md"
+                    (click)="forward('TrackingList')">
+              List
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

@@ -96,6 +96,7 @@ public class JWTRequestFilter extends OncePerRequestFilter {
 				response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 				response.getWriter().write("Token is invalid... plz login again..!!");
 				return;
+				
 			}
 		}
 		filterChain.doFilter(request, response);

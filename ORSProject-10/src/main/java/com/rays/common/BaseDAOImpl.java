@@ -29,7 +29,7 @@ public abstract class BaseDAOImpl<T extends BaseDTO> implements BaseDAOInt<T> {
     protected EntityManager entityManager;
 
     /**
-     * Builds WHERE clause predicates for search queries.
+     * Builds WHERE Clause predicates for search queries.
      *
      * @param dto     search criteria
      * @param builder criteria builder

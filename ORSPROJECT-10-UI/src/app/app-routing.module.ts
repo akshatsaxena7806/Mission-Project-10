@@ -54,6 +54,8 @@ import { HospitalSystemComponent } from './hospitalsystem/hospitalsystem.compone
 import { HospitalSystemListComponent } from './hospitalsystem/hospitalsystem-list.component';
 import { BrokerComponent } from './broker/broker.component';
 import { BrokerListComponent } from './broker/broker-list.component';
+import { TrackingComponent } from './tracking/tracking.component';
+import { TrackingListComponent } from './tracking/tracking-list.component';
 
 
 
@@ -376,6 +378,18 @@ const routes: Routes = [
   {
   path:'BrokerList',
   component:BrokerListComponent
+  },
+  {
+  path:'Tracking',
+    component:TrackingComponent
+  },
+  {
+   path:'Tracking/:id',
+    component:TrackingComponent
+  },
+  {
+  path:'TrackingList',
+  component:TrackingListComponent
   },
 ];
 
