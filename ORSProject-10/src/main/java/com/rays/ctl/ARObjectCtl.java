@@ -26,7 +26,7 @@ public class ARObjectCtl extends BaseCtl<ARObjectDTO, ARObjectForm, ARObjectServ
 		ARObjectDTO dto = new ARObjectDTO();
 		
 		System.out.println("=======>" + dto.toString());
-		
+		System.out.println("=======>" + dto.toString());
 		try {
 			List<DropdownList> arObject = service.search(dto, userContext);
 		res.addResult("arObject", arObject);
